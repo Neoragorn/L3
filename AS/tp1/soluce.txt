@@ -1,0 +1,71 @@
+Casier Sofian
+Svirchevsky Nicolas
+L3 MIAGE
+
+TP 1 Analyse syntaxique
+
+
+Exercice 1)
+
+1)  egrep '^[aA]' poesies.txt
+	egrep -w '^A.*' poesie.txt
+
+2)  egrep '^[aA]|t$' poesies.txt
+
+3)  egrep '^[aAiIuUEeOoUuYy]' poesies.txt
+
+4)  egrep 'a.*.e.*.i.*.o.*.u' poesies.txt 
+
+5)  egrep 'a[^aeiou]*e[^aeiou]*i[^aeiou]*o[^aeiou]*u' poesies.txt
+
+6) egrep 'c\w*i' poesies.txt 
+
+7)  egrep '\w\w\w\w\w\w\w\w\w\w*' poesies.txt
+
+Exercice 2)
+
+1) sed 's/\W/ /g' germinal.txt 
+
+2) sed 's/ /\n/g' germinal.txt 
+
+3) sed 's/\W/ /g;s/ /\n/g' | sort | uniq germinal.txt
+On obtient un mot par ligne avec parfois plusieurs lignes vides entre eux.
+
+sed 's/\W/ /g;s/ /\n/g;s/\n*\n/\n/g' germinal.txt | sort | uniq
+
+exercice 3)
+
+1)
+
+sed -i 's/^/<tr><td>/' employees.tsv 
+sed -i 's/$/<\/td><\/tr>/' employees.tsv
+sed -i 's/\t/<\/td><td>/' employees.tsv
+sed -i '1i<table>' employees.tsv 
+sed -i '$ s/$/<\/table>/' employees.tsv
+
+2)
+
+sed -i '$ s/$/<\/body><\/html>/' employees.tsv
+sed -i '1i<html><head><style>table, th, td { border: 1px solid black; } table { border collapse: collapse; } td,th {padding: 5px;}</style><link rel="stylesheet" type="text/css" href="style.css"></head><body>' employees.tsv
+
+
+Exercice 4)
+
+	var regexp = /^\w+@[a-aA-Z_]+?\.[a-aA-Z_]{2, 3}$/;
+
+Exercice 5)
+
+	<!DOCTYPE html>
+	<html>
+	    <head>
+	        <title>Exercice 5</title>
+	    </head>
+
+	    <body>
+	        <form action="">
+	            <p>Adresse e-mail:</p>
+	            <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" />
+	            <input type="submit" value="Valider">
+	        </form>
+	    </body>
+	</html>

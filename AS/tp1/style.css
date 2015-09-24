@@ -1,0 +1,11 @@
+td:last-child
+{
+    color : #FFFFFF;
+    background-color: #A7C942;
+    text-align:right;
+}
+
+table
+{
+    font-size: 20px;
+}
