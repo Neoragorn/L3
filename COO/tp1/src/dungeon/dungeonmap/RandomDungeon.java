@@ -29,10 +29,10 @@ public class RandomDungeon
 
 	public void copyMap()
 	{
-		for (Map.Entry<Integer, Room> e : this.tmp_map.entrySet())
+		for (Map.Entry<Integer, Room> elem : this.tmp_map.entrySet())
 		{
-			if (e.getKey() != null && e.getValue() != null)
-				this.dungeon_map.put(e.getKey(), e.getValue());
+			if (elem.getKey() != null && elem.getValue() != null)
+				this.dungeon_map.put(elem.getKey(), elem.getValue());
 		}
 		tmp_map.clear();
 		return;
